@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "grapplemod:block/block_grapple_modifier" }
+    }
+}
