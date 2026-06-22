@@ -1,3 +1,9 @@
+# Original REPO 
+
+https://github.com/yyon/grapplemod
+
+I fix this mod on Forge version 47.1.4+
+
 # Grappling Hook Mod for Minecraft
 
 A mod which adds grappling hooks. The aim of this mod is to provide a fun way to get around large builds like cities.
