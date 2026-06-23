@@ -6,7 +6,7 @@ I fix this mod on Forge version 47.1.4+
 
 # Download Jar File
 
-[Download](https://github.com/DozFiree/Grapple-Hook-Update-1.20.1/archive/refs/heads/jar.zip)
+[Download](https://github.com/DozFiree/Grapple-Hook-Update-1.20.1/raw/jar/grappling_hook_mod-1.20.1-1.20.1-v13.jar)
 
 # Grappling Hook Mod for Minecraft
 
