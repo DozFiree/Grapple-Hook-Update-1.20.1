@@ -235,7 +235,14 @@ public class GrappleController {
 									}
 								}
 							}
-							if (ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_slow)) {
+							boolean climbKeyDown = ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climb);
+							boolean climbUpKeyDown = ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climbup);
+							boolean climbDownKeyDown = ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climbdown);
+							boolean forwardKeyDown = ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.McKeys.keyBindForward);
+							boolean backKeyDown = ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.McKeys.keyBindBack);
+							boolean directionalClimbKeyDown = climbKeyDown && forwardKeyDown != backKeyDown;
+							boolean hasClimbDirection = climbUpKeyDown || climbDownKeyDown || directionalClimbKeyDown;
+							if (ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_slow) && !hasClimbDirection) {
 								// slow down
 								Vec motiontorwards = spherevec.changeLen(-0.1);
 								motiontorwards = new Vec(motiontorwards.x, 0, motiontorwards.z);
@@ -247,20 +254,16 @@ public class GrappleController {
 								motion = new Vec(newmotion.x, motion.y, newmotion.z);
 
 							}
-							if ((ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climb) || ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climbup) || ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climbdown)) && !motor) {
+							if (hasClimbDirection && !motor) {
 								isClimbing = true;
 								if (anchor.y > playerpos.y) {
 									// climb up/down rope
 									double climbup = 0;
-									if (ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climb)) {
-										climbup = playerForward;
-										if (ClientProxyInterface.proxy.isMovingSlowly(this.entity)) {
-											climbup = climbup / 0.3D;
-										}
-										if (climbup > 1) {climbup = 1;} else if (climbup < -1) {climbup = -1;}
+									if (directionalClimbKeyDown) {
+										climbup = forwardKeyDown ? 1.0 : -1.0;
 									}
-									else if (ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climbup)) { climbup = 1.0; }
-									else if (ClientProxyInterface.proxy.isKeyDown(ClientProxyInterface.GrappleKeys.key_climbdown)) { climbup = -1.0; }
+									else if (climbUpKeyDown) { climbup = 1.0; }
+									else if (climbDownKeyDown) { climbup = -1.0; }
 									if (climbup != 0) {
 											if (dist + distToAnchor < maxLen || climbup > 0 || maxLen == 0) {
 												hookEntity.r = dist + distToAnchor;
