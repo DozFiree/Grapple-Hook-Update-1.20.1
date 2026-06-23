@@ -4,6 +4,10 @@ https://github.com/yyon/grapplemod
 
 I fix this mod on Forge version 47.1.4+
 
+# Download Jar File
+
+[Download](https://github.com/DozFiree/Grapple-Hook-Update-1.20.1/raw/jar/grappling_hook_mod-1.20.1-1.20.1-v13.jar)
+
 # Grappling Hook Mod for Minecraft
 
 A mod which adds grappling hooks. The aim of this mod is to provide a fun way to get around large builds like cities.
@@ -14,7 +18,7 @@ This mod is for Forge only. No fabric version is planned at the moment.
 
 ## Mod Description & Downloads
 
-[https://www.curseforge.com/minecraft/mc-mods/grappling-hook-mod](https://www.curseforge.com/minecraft/mc-mods/grappling-hook-mod)
+[https://www.curseforge.com/minecraft/mc-mods/grappling-hook-mod](https://github.com/DozFiree/Grapple-Hook-Update-1.20.1/raw/jar/grappling_hook_mod-1.20.1-1.20.1-v13.jar)
 
 ## Setup for Developing
 
